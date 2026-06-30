@@ -1,8 +1,8 @@
-<html>
-  <head>
-    <title>Blog Home</title>
-  </head>
-  <body>
-    <h1>Blog home!</h1>
-  </body>
-</html>
+{% extends 'blog/base.html' %}
+{% block content %}
+    {% for post in posts %}
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.author }} on {{ post.date_posted }}</P>
+    <p>{{ post.content }}</P>
+    {% endfor %}
+{% endblock %}
